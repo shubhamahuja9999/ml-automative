@@ -1,0 +1,66 @@
+{
+  "model_type": "RandomForestRegressor",
+  "reference_year": 2020,
+  "feature_columns": [
+    "mileage",
+    "tax",
+    "mpg",
+    "engineSize",
+    "car_age",
+    "mileage_per_year",
+    "transmission_Manual",
+    "transmission_Semi-Auto",
+    "fuelType_Hybrid",
+    "fuelType_Other",
+    "fuelType_Petrol",
+    "brand_VW"
+  ],
+  "imputation_defaults": {
+    "tax": 145.0,
+    "mpg": 51.4
+  },
+  "categories": {
+    "transmission": [
+      "Automatic",
+      "Manual",
+      "Semi-Auto"
+    ],
+    "fuelType": [
+      "Diesel",
+      "Hybrid",
+      "Other",
+      "Petrol"
+    ],
+    "brand": [
+      "Audi",
+      "VW"
+    ]
+  },
+  "numeric_ranges": {
+    "mileage": [
+      1,
+      323000
+    ],
+    "engineSize": [
+      1.0,
+      6.3
+    ],
+    "year": [
+      1997,
+      2020
+    ]
+  },
+  "metrics": {
+    "Linear Regression": {
+      "r2": 0.8328,
+      "mae": 2622.0,
+      "rmse": 4070.0
+    },
+    "Random Forest": {
+      "r2": 0.9504,
+      "mae": 1438.0,
+      "rmse": 2218.0
+    }
+  },
+  "n_training_rows": 25735
+}

@@ -1,0 +1,6 @@
+# Force pre-built wheels only — prevents scikit-learn source compilation
+# on hosts with limited build tooling (Render, Railway, etc.).
+--only-binary :all:
+
+# Pull in the backend's pinned dependencies.
+-r backend/requirements.txt

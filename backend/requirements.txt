@@ -1,0 +1,15 @@
+# Vehicle Intelligence API — backend runtime (Railway / Render)
+# On Render free tier (512 MB) SHAP + numba would OOM, so we omit it here.
+# The explainability module falls back to ablation-based explanations
+# automatically when shap is not installed.
+
+# --- Web framework ---
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30,<0.35
+
+# --- Core data & ML ---
+numpy>=2.3,<2.6
+pandas>=2.2,<2.4
+scikit-learn==1.7.2       # patch release — compatible with models pickled by 1.7.0
+joblib>=1.3
+

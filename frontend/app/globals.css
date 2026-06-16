@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark graphite theme (shadcn tokens, HSL channels). */
+    --background: 220 30% 4%;
+    --foreground: 220 20% 92%;
+    --card: 220 24% 8%;
+    --card-foreground: 220 20% 92%;
+    --primary: 33 100% 59%; /* amber */
+    --primary-foreground: 30 40% 8%;
+    --secondary: 220 18% 16%;
+    --secondary-foreground: 220 20% 92%;
+    --muted: 220 16% 14%;
+    --muted-foreground: 220 12% 60%;
+    --accent: 33 100% 59%;
+    --accent-foreground: 30 40% 8%;
+    --border: 220 16% 18%;
+    --input: 220 16% 18%;
+    --ring: 33 100% 59%;
+    --radius: 0.9rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image:
+      radial-gradient(1200px 700px at 50% -12%, rgba(28, 36, 64, 0.55) 0%, transparent 60%),
+      radial-gradient(900px 600px at 85% 0%, rgba(255, 158, 44, 0.06) 0%, transparent 55%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgba(255, 158, 44, 0.3);
+  }
+}
+
+@layer components {
+  .glass {
+    @apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .eyebrow {
+    @apply font-mono text-[0.68rem] uppercase tracking-[0.2em] text-muted-foreground;
+  }
+
+  .text-amber-gradient {
+    @apply bg-gradient-to-r from-amber to-amber-gold bg-clip-text text-transparent;
+  }
+
+  /* Custom amber slider track + thumb (Radix). */
+  .console-scrollbar::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+  .console-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 158, 44, 0.4);
+    border-radius: 999px;
+  }
+}
